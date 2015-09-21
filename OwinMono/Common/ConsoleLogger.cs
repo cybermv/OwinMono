@@ -1,6 +1,7 @@
 ﻿namespace Common
 {
     using System;
+    using System.Threading.Tasks;
 
     public class ConsoleLogger
     {

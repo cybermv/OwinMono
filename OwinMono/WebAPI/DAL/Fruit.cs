@@ -1,5 +1,6 @@
-﻿namespace WebAPI.DAL.Entities
+﻿namespace WebAPI.DAL
 {
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public enum FruitColor
@@ -12,14 +13,15 @@
     }
 
     [Table("Fruits")]
-    public class Fruit : EntityBase
+    public class Fruit
     {
+        [Key]
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public decimal Price { get; set; }
 
         public FruitColor Color { get; set; }
-
-        public virtual Grocery Grocer { get; set; }
     }
 }
