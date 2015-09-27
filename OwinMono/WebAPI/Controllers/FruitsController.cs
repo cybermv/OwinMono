@@ -39,7 +39,6 @@
         [HttpPut, Route("")]
         public IHttpActionResult NewFruit(Fruit fruit)
         {
-            this._context.Fruits.Attach(fruit);
             this._context.Entry(fruit).State = EntityState.Added;
             int saved = this._context.SaveChanges();
 
@@ -62,7 +61,6 @@
             }
 
             fruit.Id = id;
-            this._context.Fruits.Attach(fruit);
             this._context.Entry(fruit).State = EntityState.Modified;
             int saved = this._context.SaveChanges();
 
