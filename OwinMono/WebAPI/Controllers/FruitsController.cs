@@ -1,6 +1,7 @@
 ﻿namespace WebAPI.Controllers
 {
     using DAL;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
@@ -36,6 +37,17 @@
             return NotFound();
         }
 
+        [HttpGet, Route("colors")]
+        public IHttpActionResult GetFruitColors()
+        {
+            List<KeyValuePair<int, string>> colors = Enum.GetValues(typeof(FruitColor))
+                .OfType<FruitColor>()
+                .Select(f => new KeyValuePair<int, string>((int)f, f.ToString()))
+                .ToList();
+
+            return Ok(colors);
+        }
+
         [HttpPut, Route("")]
         public IHttpActionResult NewFruit(Fruit fruit)
         {
@@ -53,9 +65,7 @@
         [HttpPatch, Route("{id}")]
         public IHttpActionResult UpdateFruit(int id, Fruit fruit)
         {
-            Fruit existingFruit = this._context.Fruits.Find(id);
-
-            if (existingFruit == null)
+            if (!this._context.Fruits.Any(f => f.Id == id))
             {
                 return NotFound();
             }

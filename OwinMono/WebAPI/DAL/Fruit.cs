@@ -5,11 +5,11 @@
 
     public enum FruitColor
     {
-        Green,
-        Yellow,
-        Red,
-        Orange,
-        Blue
+        Green = 1,
+        Yellow = 2,
+        Red = 3,
+        Orange = 4,
+        Blue = 5
     }
 
     [Table("Fruits")]

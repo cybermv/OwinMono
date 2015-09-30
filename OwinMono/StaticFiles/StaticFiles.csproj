@@ -53,15 +53,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Public\favicon.ico" />
+    <Content Include="Public\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Public\index.html" />
+    <Content Include="Public\scripts\angular.min.js" />
+    <Content Include="Public\scripts\fruitsApp.js" />
+    <Content Include="Public\styles\bootstrap.min.css" />
+    <Content Include="Public\styles\style.css" />
+    <Content Include="Public\templates\fruitTable.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Public\content\" />
-    <Folder Include="Public\scripts\" />
-    <Folder Include="Public\styles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Public\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Public\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Public\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Public\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Public\scripts\angular.min.js.map" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

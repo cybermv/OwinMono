@@ -1,0 +1,46 @@
+﻿.first-row {
+    margin-top: 25px;
+}
+
+.last-row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.table {
+    font-size: 1.2em;
+}
+
+    .table th:nth-child(1) {
+        width: 35%;
+    }
+
+    .table th:nth-child(2) {
+        width: 35%;
+    }
+
+    .table th:nth-child(3) {
+        width: 20%;
+    }
+
+    .table th:nth-child(4) {
+        width: 10%;
+    }
+
+.edit-row td {
+    margin: 0;
+    padding: 0;
+}
+
+.edit-row input, .edit-row select {
+    display: block;
+    padding: 3px;
+    margin: -3px;
+    border: 1px solid #CCC;
+    border-radius: 3px 3px;
+    width: 100%;
+}
+
+.btn {
+    padding: 4px 8px;
+}

@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBuilderExtensions.cs" />
     <Compile Include="Controllers\FruitsController.cs" />
     <Compile Include="DAL\Fruit.cs" />
     <Compile Include="DAL\FruitsContext.cs" />

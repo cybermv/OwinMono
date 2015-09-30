@@ -1,14 +1,12 @@
-﻿using Microsoft.Owin;
-using Owin;
-
-[assembly: OwinStartup(typeof(Host.Startup))]
+﻿[assembly: Microsoft.Owin.OwinStartup(typeof(Host.Startup))]
 
 namespace Host
 {
     using Microsoft.Owin.FileSystems;
     using Microsoft.Owin.StaticFiles;
+    using Owin;
     using System.Net;
-    using System.Web.Http;
+    using WebAPI;
 
     public class Startup
     {
@@ -18,37 +16,22 @@ namespace Host
             app.Use<ConsoleLoggingMiddleware>();
 
             // add the WebAPI middleware
-            SetUpWebApi(app);
+            app.UseFruitsWebApi();
 
             // add the FileServer middleware
-            SetUpFileServer(app);
+            app.UseFileServer(new FileServerOptions
+            {
+                EnableDefaultFiles = true,
+                EnableDirectoryBrowsing = false,
+                FileSystem = new PhysicalFileSystem(@"../../../StaticFiles/Public")
+                //FileSystem = new PhysicalFileSystem(@"Public")
+            });
 
             // handle leftover requests
             app.Run(async context =>
             {
                 await context.Response.WriteAsync("404 - Not found");
                 context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-            });
-        }
-
-        private void SetUpWebApi(IAppBuilder app)
-        {
-            HttpConfiguration configuration = new HttpConfiguration();
-            configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
-            configuration.MapHttpAttributeRoutes();
-            configuration.Formatters.Remove(configuration.Formatters.XmlFormatter);
-            configuration.Formatters.JsonFormatter.Indent = true;
-
-            app.UseWebApi(configuration);
-        }
-
-        private void SetUpFileServer(IAppBuilder app)
-        {
-            app.UseFileServer(new FileServerOptions
-            {
-                EnableDefaultFiles = true,
-                EnableDirectoryBrowsing = false,
-                FileSystem = new PhysicalFileSystem(@"Public")
             });
         }
     }
