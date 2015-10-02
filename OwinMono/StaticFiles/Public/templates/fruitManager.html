@@ -1,0 +1,34 @@
+﻿<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th><button class="btn btn-narrow btn-success" ng-click="createFruit()"><span class="glyphicon glyphicon-plus"></span></button></th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="fruit in fruits">
+                <tr ng-hide="fruit.editMode">
+                    <td>{{ fruit.name }}</td>
+                    <td>{{ fruit.color | KeyToValue : fruitColors }}</td>
+                    <td>{{ fruit.price | currency }}</td>
+                    <td>
+                        <button class="btn btn-narrow btn-primary" ng-click="editFruit(fruit)"><span class="glyphicon glyphicon-edit"></span></button>
+                        <button class="btn btn-narrow btn-danger" ng-click="deleteFruit(fruit.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                    </td>
+                </tr>
+                <tr ng-show="fruit.editMode" class="edit-row">
+                    <td><input type="text" ng-model="fruit.name" /></td>
+                    <td><select ng-model="fruit.color" ng-options="c.key as c.value for c in fruitColors"></select></td>
+                    <td><input type="number" step="any" ng-model="fruit.price" /></td>
+                    <td>
+                        <button class="btn btn-narrow btn-warning" ng-click="saveFruit(fruit)"><span class="glyphicon glyphicon-floppy-disk"></span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

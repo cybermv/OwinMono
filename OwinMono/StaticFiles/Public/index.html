@@ -4,38 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OwinMono sample</title>
+    <title>OwinMono - Fruits application</title>
     <link href="styles/bootstrap.min.css" rel="stylesheet" />
     <link href="styles/style.css" rel="stylesheet">
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/fruitsApp.js"></script>
 </head>
 <body ng-app="fruits">
     <div class="container">
-
         <div class="row first-row">
             <div class="col-md-12">
-                <h1>Owin-mono application</h1>
-                <p>Hooray! Your web application is up and running!</p>
+                <div class="jumbotron">
+                    <h1>OwinMono application - Fruits</h1>
+                    <p>Hooray! Your web application is up and running!</p>
+
+                    <p>Try out the fruits manager - add new fruits and edit existing ones using AngularJS and WebAPI.</p>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-
-                <h3>Fruits</h3>
-                <p>Add new fruits and edit existing ones using AngularJS and WebAPI!</p>
-
-                <fruit-table></fruit-table>
-            </div>
-        </div>
+        <fruit-manager></fruit-manager>
 
         <div class="row last-row">
             <div class="col-md-12">
-                <p class="pull-right text-muted">Mateo Velenik</p>
+                <p class="pull-right text-muted">
+                    Source code hosted at <a href="https://github.com/cybermv/OwinMono">GitHub</a>,  created by Mateo Velenik
+                </p>
             </div>
         </div>
     </div>

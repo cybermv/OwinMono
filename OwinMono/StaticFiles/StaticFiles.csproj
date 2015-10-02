@@ -60,7 +60,7 @@
     <Content Include="Public\scripts\fruitsApp.js" />
     <Content Include="Public\styles\bootstrap.min.css" />
     <Content Include="Public\styles\style.css" />
-    <Content Include="Public\templates\fruitTable.html" />
+    <Content Include="Public\templates\fruitManager.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Public\content\" />

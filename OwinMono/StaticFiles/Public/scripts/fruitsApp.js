@@ -54,10 +54,10 @@
         };
     });
 
-    fruitsModule.directive('fruitTable', function () {
+    fruitsModule.directive('fruitManager', function () {
         return {
             restrict: 'E',
-            templateUrl: 'templates/fruitTable.html',
+            templateUrl: 'templates/fruitManager.html',
             controller: ['$scope', 'FruitsService', function ($scope, fruitsService) {
                 $scope.fruitsService = fruitsService;
 
