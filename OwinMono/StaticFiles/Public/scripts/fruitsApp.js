@@ -97,7 +97,20 @@
                 }
 
                 scope.editFruit = function (fruit) {
+                    fruit._original = angular.copy(fruit);
                     fruit.editMode = true;
+                };
+
+                scope.undoEditFruit = function (fruit) {
+                    if (fruit.id > 0) {
+                        var original = fruit._original;
+                        angular.extend(fruit, original);
+                        delete fruit._original;
+                        fruit.editMode = false;
+                    } else {
+                        var index = scope.fruits.indexOf(fruit);
+                        scope.fruits.splice(index, 1);
+                    }
                 };
 
                 scope.deleteFruit = function (id) {

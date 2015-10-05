@@ -25,7 +25,8 @@
                     <td><select ng-model="fruit.color" ng-options="c.key as c.value for c in fruitColors"></select></td>
                     <td><input type="number" step="any" ng-model="fruit.price" /></td>
                     <td>
-                        <button class="btn btn-narrow btn-warning" ng-click="saveFruit(fruit)"><span class="glyphicon glyphicon-floppy-disk"></span></button>
+                        <button class="btn btn-narrow btn-success" ng-click="saveFruit(fruit)"><span class="glyphicon glyphicon-floppy-disk"></span></button>
+                        <button class="btn btn-narrow btn-warning" ng-click="undoEditFruit(fruit)"><span class="glyphicon  glyphicon glyphicon-floppy-remove"></span></button>
                     </td>
                 </tr>
             </tbody>
